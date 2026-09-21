@@ -1,8 +1,11 @@
 <?php
 // Step 1: Read the access value from the query string.
-
+$access = $_GET['access'] ?? null;
+var_dump($access);
 // Step 2: Redirect to login.php when access is denied.
-
+if ($access === "denied") {
+    header('Location: login.php');
+}
 ?>
 <!doctype html>
 <html lang="en">
